@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  jmeter:
+    build: ./
+    volumes:
+    - ./test_plans:/test_plans
+    - ./test_results:/test_results
+    command: ["--nongui", "--testfile", "/test_plans/test_plan.jmx", "--logfile", "/test_results/result.jtl"]
